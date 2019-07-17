@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IPFS demo</title>
+</head>
+<body>
+    <a href="/">home</a>
+    <h1>File Uploaded</h1>
+    <p> Name: <%= fileName %> </p>
+    <p>Link: <%= fileHash %></p>
+    <p>Path Link: <%= pathHash %></p>
+
+    <h1>remove FIles</h1>
+    <form action="/removeFile" method="POST">
+        <label for="hash">Enter Hash of File to be removed</label><br>
+        <input type="text" name="hash">
+        <button type="submit">remove</button>
+    </form>
+    <h1>upload Again</h1>
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label>email</label>
+        <input type="email" name="email">
+        <br><br>
+        <label>Upoad File</label>
+        <input type="file" name="file">
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+</html>
